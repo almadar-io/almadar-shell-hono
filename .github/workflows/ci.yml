@@ -7,7 +7,7 @@ on:
     branches: [main]
 
 jobs:
-  typecheck:
+  build-and-test:
     runs-on: ubuntu-latest
 
     steps:
@@ -18,8 +18,18 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: pnpm
 
-      - run: pnpm install --no-frozen-lockfile
+      - run: pnpm install --frozen-lockfile
 
-      - name: Typecheck server
-        run: pnpm --filter @almadar/shell-hono-server typecheck || true
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Build
+        run: pnpm build
+
+      - name: Test
+        run: pnpm run --if-present test
+
+      - name: Lint
+        run: pnpm lint
