@@ -15,7 +15,7 @@
   "dependencies": {
     "@almadar/server-hono": "^0.4.10",
     "@almadar/evaluator": "^2.38.0",
-    "@almadar/core": "^10.46.0",
+    "@almadar/core": "^10.47.0",
     "@almadar/integrations": "^2.21.0",
     "hono": "^4.7.0",
     "@hono/node-server": "^1.14.0",
