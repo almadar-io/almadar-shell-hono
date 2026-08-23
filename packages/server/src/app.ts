@@ -15,7 +15,7 @@ import {
   createHooksRouter,
   type AppEnv,
 } from '@almadar/server-hono';
-import { googleCalendarHookProvider } from '@almadar/integrations';
+import { hookProviders } from './hooks-providers.js';
 import { broadcastBusEvent } from './sse.js';
 import { registerRoutes } from './routes.js';
 
@@ -44,9 +44,8 @@ app.get(PUSH_SERVICE_WORKER_PATH, pushServiceWorkerHandler);
 app.route(
   '/api/hooks',
   createHooksRouter({
-    providers: {
-      'google-calendar': googleCalendarHookProvider(process.env.GOOGLE_CALENDAR_CHANNEL_TOKEN),
-    },
+    // Derived from this app's invoked services (generated hooks-providers.ts, I-26).
+    providers: hookProviders(),
     dispatch: (event, payload) => {
       broadcastBusEvent(undefined, {
         type: 'bus',
