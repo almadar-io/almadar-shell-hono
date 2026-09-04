@@ -13,7 +13,7 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@almadar/ui": "^6.7.0",
+    "@almadar/ui": "^6.8.0",
     "@almadar/syntax": "^1.16.0",
     "@almadar/evaluator": "^2.44.0",
     "@almadar/patterns": "^2.101.0",
