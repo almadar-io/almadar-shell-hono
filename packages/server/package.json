@@ -13,11 +13,11 @@
     "test:watch": "vitest"
   },
   "dependencies": {
-    "@almadar/auth": "^0.1.0",
-    "@almadar/core": "^10.119.0",
+    "@almadar/auth": "^0.1.1",
+    "@almadar/core": "^10.120.0",
     "@almadar/evaluator": "^2.55.0",
-    "@almadar/integrations": "^2.48.0",
-    "@almadar/server-hono": "^0.4.18",
+    "@almadar/integrations": "^2.50.0",
+    "@almadar/server-hono": "^0.4.19",
     "@hono/node-server": "^1.14.0",
     "@hono/zod-validator": "^0.4.0",
     "dotenv": "^16.4.7",
