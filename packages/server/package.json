@@ -14,8 +14,8 @@
   },
   "dependencies": {
     "@almadar/auth": "^0.1.1",
-    "@almadar/core": "^10.120.0",
-    "@almadar/evaluator": "^2.55.0",
+    "@almadar/core": "^10.121.0",
+    "@almadar/evaluator": "^2.56.0",
     "@almadar/integrations": "^2.50.0",
     "@almadar/server-hono": "^0.4.19",
     "@hono/node-server": "^1.14.0",
