@@ -30,9 +30,11 @@ if (env.USE_MOCK_DATA) {
 // Serve built client static files
 app.use('/*', serveStatic({ root: clientDist }));
 
-// SPA fallback: serve index.html for client-side routes
+// SPA fallback: a route with its own built document (`<route>/index.html`)
+// was served above; every other client route gets the untouched app shell,
+// never another route's head.
 app.get('*', async (c) => {
-  const file = Bun.file(join(clientDist, 'index.html'));
+  const file = Bun.file(join(clientDist, 'app-shell.html'));
   if (await file.exists()) {
     return c.html(await file.text());
   }
